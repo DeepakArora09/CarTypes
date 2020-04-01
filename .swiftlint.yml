@@ -1,0 +1,52 @@
+opt_in_rules:
+ - closure_end_indentation
+ - closure_spacing
+ - empty_count
+ - explicit_init
+ - fatal_error_message
+ - file_length
+ - first_where
+ - force_cast
+ - force_try
+ - force_unwrapping
+ - implicitly_unwrapped_optional
+ - operator_usage_whitespace
+ - overridden_super_call
+ - prohibited_super_call
+ - redundant_nil_coalescing
+ - multiline_parameters
+ - file_header
+ - vertical_parameter_alignment_on_call
+ - joined_default_parameter
+ - unneeded_parentheses_in_closure_argument
+ - trailing_whitespace
+ - force_cast
+ - function_parameter_count
+
+
+identifier_name:
+  min_length: 3
+  max_length:
+    warning: 50
+    error: 60
+  excluded:
+    - id
+    - on
+    - to
+
+function_body_length:
+  warning: 50
+  error: 100
+
+custom_rules:
+  quickspec_class_name:
+    name: "Invalid Test Class Name"
+    regex: "class\\s+(.*)[^Tests]:\\s+QuickSpec"
+    message: "A test class name must end with 'Tests'"
+    severity: error
+  private_ibaction:
+    name: "Private @IBAction"
+    regex: "@IBAction\\s+func"
+    message: "@IBAction should be private"
+    severity: warning
+

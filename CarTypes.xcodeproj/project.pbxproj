@@ -72,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4E412F0243543EC000A1BA1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AAA8B5F82433A752003CC4D4 /* ManufactuerApi.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		AA8B1A1D24350CC000F001B1 /* Manufacturer */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +193,8 @@
 		AAA8B5F024339826003CC4D4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A4E412F0243543EC000A1BA1 /* Entity */,
 				AAA8B5F12433983D003CC4D4 /* CarTypesModule.swift */,
-				AAA8B5F82433A752003CC4D4 /* ManufactuerApi.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
