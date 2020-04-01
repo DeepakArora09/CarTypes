@@ -8,8 +8,12 @@
 
 import Foundation
 
-final class NetworkService {
-  class func request<T: Codable>(router: NetworkRouter, completion: @escaping (T) -> ()) {
+protocol NetworkServicing {
+  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T) -> Void)
+}
+
+final class NetworkService: NetworkServicing {
+  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T) -> Void) {
     var components = URLComponents()
     components.scheme = router.scheme
     components.host = router.host
@@ -25,7 +29,9 @@ final class NetworkService {
       guard error == nil, response != nil, let data = data else {
         return
       }
-      let responseObject = try! JSONDecoder().decode(T.self, from: data)
+      guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else {
+        fatalError("Incorrect JSON from API response")
+      }
       completion(responseObject)
     }
     dataTask.resume()

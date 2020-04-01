@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8B1A2424350D0200F001B1 /* ManufacturerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2324350D0200F001B1 /* ManufacturerRouter.swift */; };
+		AA8B1A2624350D8B00F001B1 /* ManufacturerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2524350D8B00F001B1 /* ManufacturerPresenter.swift */; };
+		AA8B1A2824350DB900F001B1 /* ManufacturerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2724350DB900F001B1 /* ManufacturerInteractor.swift */; };
+		AA8B1A2B24350E1400F001B1 /* Manufacturer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8B1A2A24350E1400F001B1 /* Manufacturer.storyboard */; };
+		AA8B1A2E24350E5000F001B1 /* ManufacturerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2D24350E5000F001B1 /* ManufacturerViewController.swift */; };
+		AA8B1A3024350F0600F001B1 /* ManufacturerControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2F24350F0600F001B1 /* ManufacturerControllerProvider.swift */; };
 		AAA8B5CE24339150003CC4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8B5CD24339150003CC4D4 /* AppDelegate.swift */; };
-		AAA8B5D224339150003CC4D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8B5D124339150003CC4D4 /* ViewController.swift */; };
-		AAA8B5D524339150003CC4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA8B5D324339150003CC4D4 /* Main.storyboard */; };
 		AAA8B5D724339152003CC4D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA8B5D624339152003CC4D4 /* Assets.xcassets */; };
 		AAA8B5DA24339152003CC4D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA8B5D824339152003CC4D4 /* LaunchScreen.storyboard */; };
 		AAA8B5E524339152003CC4D4 /* CarTypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8B5E424339152003CC4D4 /* CarTypesTests.swift */; };
@@ -30,10 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA8B1A2324350D0200F001B1 /* ManufacturerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerRouter.swift; sourceTree = "<group>"; };
+		AA8B1A2524350D8B00F001B1 /* ManufacturerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerPresenter.swift; sourceTree = "<group>"; };
+		AA8B1A2724350DB900F001B1 /* ManufacturerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerInteractor.swift; sourceTree = "<group>"; };
+		AA8B1A2A24350E1400F001B1 /* Manufacturer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Manufacturer.storyboard; sourceTree = "<group>"; };
+		AA8B1A2D24350E5000F001B1 /* ManufacturerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerViewController.swift; sourceTree = "<group>"; };
+		AA8B1A2F24350F0600F001B1 /* ManufacturerControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerControllerProvider.swift; sourceTree = "<group>"; };
 		AAA8B5CA24339150003CC4D4 /* CarTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8B5CD24339150003CC4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAA8B5D124339150003CC4D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AAA8B5D424339150003CC4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAA8B5D624339152003CC4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAA8B5D924339152003CC4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAA8B5DB24339152003CC4D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +72,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA8B1A1D24350CC000F001B1 /* Manufacturer */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2224350CDE00F001B1 /* Interactor */,
+				AA8B1A2124350CD800F001B1 /* Entity */,
+				AA8B1A2024350CD300F001B1 /* Presenter */,
+				AA8B1A1F24350CCF00F001B1 /* View */,
+				AA8B1A1E24350CC800F001B1 /* Router */,
+			);
+			path = Manufacturer;
+			sourceTree = "<group>";
+		};
+		AA8B1A1E24350CC800F001B1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2324350D0200F001B1 /* ManufacturerRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AA8B1A1F24350CCF00F001B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2C24350E3300F001B1 /* ViewController */,
+				AA8B1A2924350E0200F001B1 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA8B1A2024350CD300F001B1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2524350D8B00F001B1 /* ManufacturerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AA8B1A2124350CD800F001B1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AA8B1A2224350CDE00F001B1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2724350DB900F001B1 /* ManufacturerInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AA8B1A2924350E0200F001B1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2A24350E1400F001B1 /* Manufacturer.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AA8B1A2C24350E3300F001B1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B1A2D24350E5000F001B1 /* ManufacturerViewController.swift */,
+				AA8B1A2F24350F0600F001B1 /* ManufacturerControllerProvider.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		AAA8B5C124339150003CC4D4 = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +162,10 @@
 		AAA8B5CC24339150003CC4D4 /* CarTypes */ = {
 			isa = PBXGroup;
 			children = (
+				AA8B1A1D24350CC000F001B1 /* Manufacturer */,
 				AAA8B5F324339E0F003CC4D4 /* Network */,
 				AAA8B5F024339826003CC4D4 /* Service */,
 				AAA8B5CD24339150003CC4D4 /* AppDelegate.swift */,
-				AAA8B5D124339150003CC4D4 /* ViewController.swift */,
-				AAA8B5D324339150003CC4D4 /* Main.storyboard */,
 				AAA8B5D624339152003CC4D4 /* Assets.xcassets */,
 				AAA8B5D824339152003CC4D4 /* LaunchScreen.storyboard */,
 				AAA8B5DB24339152003CC4D4 /* Info.plist */,
@@ -208,7 +284,7 @@
 			files = (
 				AAA8B5DA24339152003CC4D4 /* LaunchScreen.storyboard in Resources */,
 				AAA8B5D724339152003CC4D4 /* Assets.xcassets in Resources */,
-				AAA8B5D524339150003CC4D4 /* Main.storyboard in Resources */,
+				AA8B1A2B24350E1400F001B1 /* Manufacturer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +326,13 @@
 				AAA8B5F92433A752003CC4D4 /* ManufactuerApi.swift in Sources */,
 				AAA8B5F72433A187003CC4D4 /* NetworkService.swift in Sources */,
 				AAA8B5F524339E29003CC4D4 /* NetworkRouter.swift in Sources */,
-				AAA8B5D224339150003CC4D4 /* ViewController.swift in Sources */,
+				AA8B1A2624350D8B00F001B1 /* ManufacturerPresenter.swift in Sources */,
+				AA8B1A2824350DB900F001B1 /* ManufacturerInteractor.swift in Sources */,
 				AAA8B5CE24339150003CC4D4 /* AppDelegate.swift in Sources */,
 				AAA8B5F22433983D003CC4D4 /* CarTypesModule.swift in Sources */,
+				AA8B1A2E24350E5000F001B1 /* ManufacturerViewController.swift in Sources */,
+				AA8B1A3024350F0600F001B1 /* ManufacturerControllerProvider.swift in Sources */,
+				AA8B1A2424350D0200F001B1 /* ManufacturerRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,14 +355,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AAA8B5D324339150003CC4D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAA8B5D424339150003CC4D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAA8B5D824339152003CC4D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
