@@ -9,6 +9,7 @@
 import Foundation
 
 enum NetworkRouter {
+
   case getManufacturers(page: Int, size: Int)
   case getMainTypes(manufacturerId: Int, page: Int, size: Int)
 
