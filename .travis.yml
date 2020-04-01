@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode11.3
-xcode_scheme: CarTypes
-xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11
+before_install:
+    - brew update
+    - brew install xctool
+script: xctool -scheme CarTypes test
