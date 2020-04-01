@@ -9,7 +9,16 @@
 import UIKit
 
 class CarTypesModule {
-  func start() -> UIViewController {
-    return UIViewController()
+  private let manufacturerRouter: ManufacturerRouting
+
+  init() {
+    self.manufacturerRouter = ManufacturerRouter(
+      manufacturerControllerProvider: ManufacturerControllerProvider(),
+      service: NetworkService()
+    )
+  }
+
+  var initialViewController: UIViewController {
+    return manufacturerRouter.listingView()
   }
 }
