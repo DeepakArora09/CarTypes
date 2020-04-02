@@ -36,8 +36,4 @@ final class ManufacturerInteractor: ManufacturerInteracting {
       completion(.success(manufacturer))
     }
   }
-
-  func fetchNextPageManufacturers() {
-    print("ABCD")
-  }
 }

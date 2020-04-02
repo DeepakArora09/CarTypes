@@ -16,11 +16,13 @@ protocol ManufacturerPresenting {
     viewHeight: CGFloat,
     currentVerticalOffset: CGFloat
   )
+  func onDidSelect(item: ManufacturerViewModel)
 }
 
 final class ManufacturerPresenter: ManufacturerPresenting {
   private let interactor: ManufacturerInteracting
   private let dataSourceBuilder: ManufacturerDataSourceBuilding
+  private let router: ManufacturerRouting
   private weak var view: ManufacturerView?
   private var manufacturer: Manufactuer?
   private var isLoading = false
@@ -29,11 +31,13 @@ final class ManufacturerPresenter: ManufacturerPresenting {
   init(
     view: ManufacturerView,
     interactor: ManufacturerInteracting,
-    dataSourceBuilder: ManufacturerDataSourceBuilding
+    dataSourceBuilder: ManufacturerDataSourceBuilding,
+    router: ManufacturerRouting
   ) {
     self.view = view
     self.interactor = interactor
     self.dataSourceBuilder = dataSourceBuilder
+    self.router = router
   }
 
   func onViewDidLoad() {
@@ -53,6 +57,13 @@ final class ManufacturerPresenter: ManufacturerPresenting {
       fetchManufacturer(page: manufacturer.currentPage + 1, true)
     }
   }
+
+  func onDidSelect(item: ManufacturerViewModel) {
+    guard let controller = view as? UIViewController else {
+      return
+    }
+    router.showModels(for: item.id, name: item.name ?? "", on: controller)
+  }
 }
 
 // MARK: Fetch Data
@@ -66,7 +77,6 @@ private extension ManufacturerPresenter {
         }
         switch result {
         case let .success(newManufacturer):
-          print(newManufacturer.items.map( {$0.name }))
           if isPaginated {
             self.manufacturer?.items.append(contentsOf: newManufacturer.items)
             self.manufacturer?.currentPage = newManufacturer.currentPage
