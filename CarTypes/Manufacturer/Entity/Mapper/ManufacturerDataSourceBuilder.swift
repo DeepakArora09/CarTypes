@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol ManufacturerDataSourceBuilding {
-  func buildDataSource(from items: [ManufactuerItem]) -> ManufacturerDataSource
+protocol DataSourceBuilding {
+  func buildDataSource(from items: [DomainItem]) -> DataSource
 }
 
-final class ManufacturerDataSourceBuilder: ManufacturerDataSourceBuilding {
-  func buildDataSource(from items: [ManufactuerItem]) -> ManufacturerDataSource {
+final class DataSourceBuilder: DataSourceBuilding {
+  func buildDataSource(from items: [DomainItem]) -> DataSource {
     let viewModels = items.enumerated().map({ index, item in
-      ManufacturerViewModel(
+      ViewModel(
         id: item.id,
         name: item.name,
         color: index % 2 == 0 ? .lightGray : .gray
@@ -23,11 +23,11 @@ final class ManufacturerDataSourceBuilder: ManufacturerDataSourceBuilding {
     })
 
     let sections = [
-      ManufacturerSection(
+      DataSourceSection(
         cellType: ManufacturerItemCell.self,
         items: viewModels
       )
     ]
-    return ManufacturerDataSource(sections: sections)
+    return DataSource(sections: sections)
   }
 }

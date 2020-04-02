@@ -1,5 +1,5 @@
 //
-//  ManufactuerApi.swift
+//  ResponseApi.swift
 //  CarTypes
 //
 //  Created by Deepak Arora on 31.03.20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ManufactuerApi: Codable {
+struct ResponseApi: Codable {
   let currentPage: Int
   let totalPages: Int
   let items: [String: String]

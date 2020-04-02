@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Manufactuer {
+struct ResponseDomain {
   var currentPage: Int
   let totalPages: Int
-  var items: [ManufactuerItem]
+  var items: [DomainItem]
 }

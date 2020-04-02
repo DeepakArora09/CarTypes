@@ -1,5 +1,5 @@
 //
-//  ManufacturerDataSource.swift
+//  DataSource.swift
 //  CarTypes
 //
 //  Created by Deepak Arora on 02.04.20.
@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-struct ManufacturerDataSource {
-  let sections: [ManufacturerSection]
+struct DataSource {
+  let sections: [DataSourceSection]
 }
 
-struct ManufacturerSection {
+struct DataSourceSection {
   let cellType: ReusableView.Type
-  let items: [ManufacturerViewModel]
+  let items: [ViewModel]
   let cellHeight: CGFloat = 80
 }
 
-struct ManufacturerViewModel {
+struct ViewModel {
   let id: String
   let name: String?
   let color: UIColor

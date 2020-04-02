@@ -17,7 +17,7 @@ class ManufacturerItemCell: NibLoadableReusableTableCell {
   }
 
   func update(with viewModel: Any) {
-    guard let viewModel = viewModel as? ManufacturerViewModel else {
+    guard let viewModel = viewModel as? ViewModel else {
       return
     }
     nameLabel.text = viewModel.name

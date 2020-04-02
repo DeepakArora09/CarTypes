@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ManufactuerItem {
+struct DomainItem {
   let id: String
   let name: String?
 }

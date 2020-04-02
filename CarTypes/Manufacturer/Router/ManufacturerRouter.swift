@@ -18,10 +18,16 @@ final class ManufacturerRouter: ManufacturerRouting {
 
   private let manufacturerControllerProvider: ManufacturerControllerProviding
   private let service: NetworkServicing
+  private let modelRouter: ModelRouting
 
-  init(manufacturerControllerProvider: ManufacturerControllerProviding, service: NetworkServicing) {
+  init(
+    manufacturerControllerProvider: ManufacturerControllerProviding,
+    service: NetworkServicing,
+    modelRouter: ModelRouting
+  ) {
     self.manufacturerControllerProvider = manufacturerControllerProvider
     self.service = service
+    self.modelRouter = modelRouter
   }
 
   func listingView() -> ManufacturerViewController {
@@ -32,6 +38,6 @@ final class ManufacturerRouter: ManufacturerRouting {
   }
 
   func showModels(for id: String, name: String, on hostViewController: UIViewController) {
-    // Next PR!
+    modelRouter.showModels(for: id, name: name, on: hostViewController)
   }
 }
