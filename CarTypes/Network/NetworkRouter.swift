@@ -10,7 +10,7 @@ import Foundation
 
 enum NetworkRouter {
   case getManufacturers(page: Int, size: Int)
-  case getMainTypes(manufacturerId: Int, page: Int, size: Int)
+  case getMainTypes(manufacturerId: String, page: Int, size: Int)
 
   var accessToken: String {
     return "coding-puzzle-client-449cc9d"
@@ -46,7 +46,7 @@ enum NetworkRouter {
       return commonQueryItems(for: page, size: size)
     case .getMainTypes(let manufacturerId, let page, let size):
       var commonItems = commonQueryItems(for: page, size: size)
-      commonItems.append(URLQueryItem(name: "manufacturer", value: "\(manufacturerId)"))
+      commonItems.append(URLQueryItem(name: "manufacturer", value: manufacturerId))
       return commonItems
     }
   }

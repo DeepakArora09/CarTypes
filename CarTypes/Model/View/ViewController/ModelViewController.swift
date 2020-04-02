@@ -1,20 +1,20 @@
 //
-//  ManufacturerViewController.swift
+//  ModelViewController.swift
 //  CarTypes
 //
-//  Created by Deepak Arora on 01.04.20.
+//  Created by Deepak Arora on 02.04.20.
 //  Copyright © 2020 Deepak Arora. All rights reserved.
 //
 
 import UIKit
 
-protocol ManufacturerView: AnyObject {
+protocol ModelView: AnyObject {
   func update(dataSource: DataSource)
 }
 
-class ManufacturerViewController: UIViewController {
+class ModelViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
-  var presenter: ManufacturerPresenting?
+  var presenter: ModelPresenting?
   private var dataSource = DataSource(sections: [])
 
   override func viewDidLoad() {
@@ -24,14 +24,14 @@ class ManufacturerViewController: UIViewController {
   }
 }
 
-extension ManufacturerViewController: ManufacturerView {
+extension ModelViewController: ModelView {
   func update(dataSource: DataSource) {
     self.dataSource = dataSource
     tableView.reloadData()
   }
 }
 
-extension ManufacturerViewController: UITableViewDataSource {
+extension ModelViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard dataSource.sections.isEmpty == false,
       dataSource.sections.count > section else {
@@ -54,7 +54,7 @@ extension ManufacturerViewController: UITableViewDataSource {
   }
 }
 
-extension ManufacturerViewController: UITableViewDelegate {
+extension ModelViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return dataSource.sections[indexPath.section].cellHeight
   }
@@ -69,7 +69,7 @@ extension ManufacturerViewController: UITableViewDelegate {
   }
 }
 
-extension ManufacturerViewController: UIScrollViewDelegate {
+extension ModelViewController: UIScrollViewDelegate {
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     presenter?.scrollViewEndDragging(
       with: scrollView.contentSize.height,

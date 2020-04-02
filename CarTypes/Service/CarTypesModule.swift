@@ -10,11 +10,16 @@ import UIKit
 
 class CarTypesModule {
   private let manufacturerRouter: ManufacturerRouting
+  private let network = NetworkService()
 
   init() {
     self.manufacturerRouter = ManufacturerRouter(
       manufacturerControllerProvider: ManufacturerControllerProvider(),
-      service: NetworkService()
+      service: network,
+      modelRouter: ModelRouter(
+        modelControllerProvider: ModelControllerProvider(),
+        service: network
+      )
     )
   }
 
