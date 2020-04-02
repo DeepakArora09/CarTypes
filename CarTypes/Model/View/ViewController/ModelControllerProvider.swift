@@ -23,7 +23,7 @@ final class ModelControllerProvider: ModelControllerProviding {
     name: String,
     service: NetworkServicing,
     router: ModelRouting
-  ) -> ModelViewController{
+  ) -> ModelViewController {
     guard let viewController = modelStoryboard.instantiateViewController(
       withIdentifier: "ModelViewController"
     ) as? ModelViewController else {
@@ -48,4 +48,3 @@ final class ModelControllerProvider: ModelControllerProviding {
     return UIStoryboard(name: "Model", bundle: Bundle(for: ModelViewController.self))
   }
 }
-

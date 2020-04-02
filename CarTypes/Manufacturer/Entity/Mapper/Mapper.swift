@@ -22,6 +22,6 @@ final class Mapper: Mapping {
   }
 
   private func domainItem(from item: [String: String]) -> [DomainItem] {
-    return item.keys.map( { return DomainItem(id: $0, name: item[$0]) })
+    return item.keys.map({ return DomainItem(id: $0, name: item[$0]) })
   }
 }

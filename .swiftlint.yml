@@ -15,12 +15,10 @@ opt_in_rules:
  - prohibited_super_call
  - redundant_nil_coalescing
  - multiline_parameters
- - file_header
  - vertical_parameter_alignment_on_call
  - joined_default_parameter
  - unneeded_parentheses_in_closure_argument
  - trailing_whitespace
- - force_cast
  - function_parameter_count
 
 

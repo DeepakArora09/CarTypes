@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DataSourceBuilding {
-  func buildDataSource(from items: [DomainItem]) -> DataSource
+  func buildDataSource(from items: [DomainItem], color: UIColor) -> DataSource
 }
 
 final class DataSourceBuilder: DataSourceBuilding {
-  func buildDataSource(from items: [DomainItem]) -> DataSource {
+  func buildDataSource(from items: [DomainItem], color: UIColor) -> DataSource {
     let viewModels = items.enumerated().map({ index, item in
       ViewModel(
         id: item.id,
         name: item.name,
-        color: index % 2 == 0 ? .lightGray : .gray
+        color: index % 2 == 0 ? color : color.withAlphaComponent(0.6)
       )
     })
 
