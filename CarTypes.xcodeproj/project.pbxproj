@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A45ACF642435D71800479CA1 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF632435D71800479CA1 /* Manufacturer.swift */; };
+		A45ACF642435D71800479CA1 /* ResponseDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF632435D71800479CA1 /* ResponseDomain.swift */; };
 		A45ACF662435D7BB00479CA1 /* ManufacturerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */; };
-		A45ACF692435D80D00479CA1 /* ManufacturerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */; };
+		A45ACF692435D80D00479CA1 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF682435D80D00479CA1 /* Mapper.swift */; };
 		A45ACF6C24363C9300479CA1 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF6B24363C9300479CA1 /* ReusableView.swift */; };
 		A45ACF6F24363CE400479CA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF6E24363CE400479CA1 /* UIView.swift */; };
 		A45ACF7124363D4C00479CA1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7024363D4C00479CA1 /* UITableView.swift */; };
-		A45ACF7424363E3700479CA1 /* ManufacturerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */; };
-		A45ACF7724363F9400479CA1 /* ManufacturerDataSourceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */; };
+		A45ACF7424363E3700479CA1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7324363E3700479CA1 /* DataSource.swift */; };
+		A45ACF7724363F9400479CA1 /* DataSourceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7624363F9400479CA1 /* DataSourceBuilder.swift */; };
 		A45ACF7B2436422100479CA1 /* ManufacturerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF792436422100479CA1 /* ManufacturerItemCell.swift */; };
 		A45ACF7C2436422100479CA1 /* ManufacturerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45ACF7A2436422100479CA1 /* ManufacturerItemCell.xib */; };
 		A45ACF8524365A3900479CA1 /* Model.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45ACF8424365A3900479CA1 /* Model.storyboard */; };
@@ -50,14 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A45ACF632435D71800479CA1 /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
+		A45ACF632435D71800479CA1 /* ResponseDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDomain.swift; sourceTree = "<group>"; };
 		A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerItem.swift; sourceTree = "<group>"; };
-		A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerMapper.swift; sourceTree = "<group>"; };
+		A45ACF682435D80D00479CA1 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		A45ACF6B24363C9300479CA1 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A45ACF6E24363CE400479CA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A45ACF7024363D4C00479CA1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDataSource.swift; sourceTree = "<group>"; };
-		A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDataSourceBuilder.swift; sourceTree = "<group>"; };
+		A45ACF7324363E3700479CA1 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A45ACF7624363F9400479CA1 /* DataSourceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceBuilder.swift; sourceTree = "<group>"; };
 		A45ACF792436422100479CA1 /* ManufacturerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerItemCell.swift; sourceTree = "<group>"; };
 		A45ACF7A2436422100479CA1 /* ManufacturerItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManufacturerItemCell.xib; sourceTree = "<group>"; };
 		A45ACF8424365A3900479CA1 /* Model.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Model.storyboard; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		A45ACF672435D7F200479CA1 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */,
-				A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */,
+				A45ACF682435D80D00479CA1 /* Mapper.swift */,
+				A45ACF7624363F9400479CA1 /* DataSourceBuilder.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 		A45ACF7224363E1C00479CA1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */,
+				A45ACF7324363E3700479CA1 /* DataSource.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -151,7 +151,6 @@
 		A45ACF7D243659DF00479CA1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A45ACF8224365A0B00479CA1 /* Entity */,
 				A45ACF8124365A0200479CA1 /* Interactor */,
 				A45ACF80243659FD00479CA1 /* Presenter */,
 				A45ACF7F243659F800479CA1 /* View */,
@@ -191,13 +190,6 @@
 				A45ACF8F24365D7D00479CA1 /* ModelInteractor.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		A45ACF8224365A0B00479CA1 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		A45ACF8324365A2600479CA1 /* Storyboard */ = {
@@ -268,7 +260,7 @@
 			children = (
 				A45ACF7224363E1C00479CA1 /* ViewModel */,
 				A45ACF672435D7F200479CA1 /* Mapper */,
-				A45ACF632435D71800479CA1 /* Manufacturer.swift */,
+				A45ACF632435D71800479CA1 /* ResponseDomain.swift */,
 				A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */,
 			);
 			path = Entity;
@@ -491,7 +483,7 @@
 				A45ACF7B2436422100479CA1 /* ManufacturerItemCell.swift in Sources */,
 				AAA8B5F524339E29003CC4D4 /* NetworkRouter.swift in Sources */,
 				A45ACF8E24365CC700479CA1 /* ModelPresenter.swift in Sources */,
-				A45ACF692435D80D00479CA1 /* ManufacturerMapper.swift in Sources */,
+				A45ACF692435D80D00479CA1 /* Mapper.swift in Sources */,
 				A45ACF6C24363C9300479CA1 /* ReusableView.swift in Sources */,
 				AA8B1A2624350D8B00F001B1 /* ManufacturerPresenter.swift in Sources */,
 				A45ACF8824365AA700479CA1 /* ModelViewController.swift in Sources */,
@@ -502,12 +494,12 @@
 				A45ACF6F24363CE400479CA1 /* UIView.swift in Sources */,
 				AA8B1A2E24350E5000F001B1 /* ManufacturerViewController.swift in Sources */,
 				A45ACF8A24365ACB00479CA1 /* ModelControllerProvider.swift in Sources */,
-				A45ACF7424363E3700479CA1 /* ManufacturerDataSource.swift in Sources */,
+				A45ACF7424363E3700479CA1 /* DataSource.swift in Sources */,
 				AA8B1A3024350F0600F001B1 /* ManufacturerControllerProvider.swift in Sources */,
 				A45ACF7124363D4C00479CA1 /* UITableView.swift in Sources */,
 				A45ACF9024365D7D00479CA1 /* ModelInteractor.swift in Sources */,
-				A45ACF7724363F9400479CA1 /* ManufacturerDataSourceBuilder.swift in Sources */,
-				A45ACF642435D71800479CA1 /* Manufacturer.swift in Sources */,
+				A45ACF7724363F9400479CA1 /* DataSourceBuilder.swift in Sources */,
+				A45ACF642435D71800479CA1 /* ResponseDomain.swift in Sources */,
 				AA8B1A2424350D0200F001B1 /* ManufacturerRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

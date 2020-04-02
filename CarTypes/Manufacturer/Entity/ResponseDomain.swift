@@ -1,5 +1,5 @@
 //
-//  Manufacturer.swift
+//  ResponseDomain.swift
 //  CarTypes
 //
 //  Created by Deepak Arora on 02.04.20.

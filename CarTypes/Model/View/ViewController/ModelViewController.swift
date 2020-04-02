@@ -10,6 +10,7 @@ import UIKit
 
 protocol ModelView: AnyObject {
   func update(dataSource: DataSource)
+  func setNavigation(title: String)
 }
 
 class ModelViewController: UIViewController {
@@ -28,6 +29,10 @@ extension ModelViewController: ModelView {
   func update(dataSource: DataSource) {
     self.dataSource = dataSource
     tableView.reloadData()
+  }
+
+  func setNavigation(title: String) {
+    navigationItem.title = title
   }
 }
 

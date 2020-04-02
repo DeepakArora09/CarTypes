@@ -10,6 +10,7 @@ import UIKit
 
 protocol ManufacturerView: AnyObject {
   func update(dataSource: DataSource)
+  func setNavigation(title: String)
 }
 
 class ManufacturerViewController: UIViewController {
@@ -28,6 +29,10 @@ extension ManufacturerViewController: ManufacturerView {
   func update(dataSource: DataSource) {
     self.dataSource = dataSource
     tableView.reloadData()
+  }
+
+  func setNavigation(title: String) {
+    navigationItem.title = title
   }
 }
 

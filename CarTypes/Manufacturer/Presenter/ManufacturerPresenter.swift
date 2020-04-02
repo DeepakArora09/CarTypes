@@ -41,6 +41,7 @@ final class ManufacturerPresenter: ManufacturerPresenting {
   }
 
   func onViewDidLoad() {
+    view?.setNavigation(title: "Manufacturers")
     fetchManufacturer(page: manufacturer?.currentPage ?? 0, false)
   }
 
