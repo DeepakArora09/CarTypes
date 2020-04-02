@@ -32,4 +32,3 @@ final class ModelRouter: ModelRouting {
     hostViewController.navigationController?.pushViewController(viewController, animated: true)
   }
 }
-

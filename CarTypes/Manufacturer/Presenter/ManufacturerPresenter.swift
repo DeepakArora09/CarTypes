@@ -1,9 +1,9 @@
 //
-//  ManufacturerPresenter.swift
-//  CarTypes
+// ManufacturerPresenter.swift
+// CarTypes
 //
-//  Created by Deepak Arora on 01.04.20.
-//  Copyright © 2020 Deepak Arora. All rights reserved.
+// Created by Deepak Arora on 01.04.20.
+// Copyright © 2020 Deepak Arora. All rights reserved.
 //
 
 import Foundation
@@ -99,7 +99,10 @@ private extension ManufacturerPresenter {
     guard let manufacturer = manufacturer else {
       return
     }
-    let dataSource = dataSourceBuilder.buildDataSource(from: manufacturer.items)
+    let dataSource = dataSourceBuilder.buildDataSource(
+      from: manufacturer.items,
+      color: .blue
+    )
     DispatchQueue.main.async {
       self.view?.update(dataSource: dataSource)
     }

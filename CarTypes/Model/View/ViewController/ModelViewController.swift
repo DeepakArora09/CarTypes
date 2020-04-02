@@ -11,6 +11,7 @@ import UIKit
 protocol ModelView: AnyObject {
   func update(dataSource: DataSource)
   func setNavigation(title: String)
+  func showAlert(with title: String, message: String, buttonTitle: String)
 }
 
 class ModelViewController: UIViewController {
@@ -33,6 +34,12 @@ extension ModelViewController: ModelView {
 
   func setNavigation(title: String) {
     navigationItem.title = title
+  }
+
+  func showAlert(with title: String, message: String, buttonTitle: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
+    present(alert, animated: true)
   }
 }
 
