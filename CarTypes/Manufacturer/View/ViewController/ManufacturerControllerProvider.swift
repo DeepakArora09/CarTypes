@@ -21,7 +21,11 @@ final class ManufacturerControllerProvider: ManufacturerControllerProviding {
     }
 
     let interactor = ManufacturerInteractor(service: service, mapper: ManufacturerMapper())
-    let presenter = ManufacturerPresenter(view: viewController, interactor: interactor)
+    let presenter = ManufacturerPresenter(
+      view: viewController,
+      interactor: interactor,
+      dataSourceBuilder: ManufacturerDataSourceBuilder()
+    )
 
     viewController.presenter = presenter
     return viewController
