@@ -20,7 +20,7 @@ final class ManufacturerControllerProvider: ManufacturerControllerProviding {
       fatalError("ManufacturerViewController cannot init from storyboard")
     }
 
-    let interactor = ManufacturerInteractor(service: service)
+    let interactor = ManufacturerInteractor(service: service, mapper: ManufacturerMapper())
     let presenter = ManufacturerPresenter(view: viewController, interactor: interactor)
 
     viewController.presenter = presenter
