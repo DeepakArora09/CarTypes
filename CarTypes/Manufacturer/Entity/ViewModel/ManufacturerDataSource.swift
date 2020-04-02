@@ -20,6 +20,7 @@ struct ManufacturerSection {
 }
 
 struct ManufacturerViewModel {
+  let id: String
   let name: String?
   let color: UIColor
 }

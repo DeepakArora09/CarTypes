@@ -45,6 +45,7 @@ extension ManufacturerViewController: UITableViewDataSource {
     guard dataSource.sections.count > indexPath.section else {
       return UITableViewCell()
     }
+
     let section = dataSource.sections[indexPath.section]
     let viewModel = section.items[indexPath.row]
     let cell: ReusableTableCell = tableView.dequeueReusableCell(ofType: section.cellType, for: indexPath)
@@ -56,6 +57,15 @@ extension ManufacturerViewController: UITableViewDataSource {
 extension ManufacturerViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return dataSource.sections[indexPath.section].cellHeight
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard dataSource.sections.count > indexPath.section,
+      dataSource.sections[indexPath.section].items.count > indexPath.row else {
+        return
+    }
+    let item = dataSource.sections[indexPath.section].items[indexPath.row]
+    presenter?.onDidSelect(item: item)
   }
 }
 

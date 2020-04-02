@@ -16,6 +16,7 @@ final class ManufacturerDataSourceBuilder: ManufacturerDataSourceBuilding {
   func buildDataSource(from items: [ManufactuerItem]) -> ManufacturerDataSource {
     let viewModels = items.enumerated().map({ index, item in
       ManufacturerViewModel(
+        id: item.id,
         name: item.name,
         color: index % 2 == 0 ? .lightGray : .gray
       )
