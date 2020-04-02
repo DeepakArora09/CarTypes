@@ -1,21 +1,22 @@
 //
-//  ManufacturerInteractor.swift
+//  ModelInteractor.swift
 //  CarTypes
 //
-//  Created by Deepak Arora on 01.04.20.
+//  Created by Deepak Arora on 02.04.20.
 //  Copyright © 2020 Deepak Arora. All rights reserved.
 //
 
 import Foundation
 
-protocol ManufacturerInteracting {
-  func fetchManufacturers(
+protocol ModelInteracting {
+  func fetchModels(
     for page: Int,
+    id: String,
     completion: @escaping (Result<ResponseDomain, Error>) -> Void
   )
 }
 
-final class ManufacturerInteractor: ManufacturerInteracting {
+final class ModelInteractor: ModelInteracting {
   private let mapper: Mapping
   private let service: NetworkServicing
   private let limit = 15
@@ -25,15 +26,18 @@ final class ManufacturerInteractor: ManufacturerInteracting {
     self.mapper = mapper
   }
 
-  func fetchManufacturers(
+  func fetchModels(
     for page: Int,
+    id: String,
     completion: @escaping (Result<ResponseDomain, Error>) -> Void
   ) {
-    service.request(router: .getManufacturers(page: page, size: limit)) { [weak self] (response: ResponseApi, error: Error?)  in
-      guard let manufacturer = self?.mapper.domain(from: response) else {
+    service.request(
+      router: .getMainTypes(manufacturerId: id, page: page, size: limit)
+    ) { [weak self] (response: ResponseApi, error: Error?)  in
+      guard let model = self?.mapper.domain(from: response) else {
         return
       }
-      completion(.success(manufacturer))
+      completion(.success(model))
     }
   }
 }

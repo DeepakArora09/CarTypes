@@ -8,20 +8,20 @@
 
 import Foundation
 
-protocol ManufacturerMapping {
-  func manufacturer(from response: ManufactuerApi) -> Manufactuer
+protocol Mapping {
+  func domain(from response: ResponseApi) -> ResponseDomain
 }
 
-final class ManufacturerMapper: ManufacturerMapping {
-  func manufacturer(from response: ManufactuerApi) -> Manufactuer {
-    return Manufactuer(
+final class Mapper: Mapping {
+  func domain(from response: ResponseApi) -> ResponseDomain {
+    return ResponseDomain(
       currentPage: response.currentPage,
       totalPages: response.totalPages,
-      items: manufacturerItem(from: response.items)
+      items: domainItem(from: response.items)
     )
   }
 
-  private func manufacturerItem(from item: [String: String]) -> [ManufactuerItem] {
-    return item.keys.map( { return ManufactuerItem(id: $0, name: item[$0]) })
+  private func domainItem(from item: [String: String]) -> [DomainItem] {
+    return item.keys.map( { return DomainItem(id: $0, name: item[$0]) })
   }
 }
