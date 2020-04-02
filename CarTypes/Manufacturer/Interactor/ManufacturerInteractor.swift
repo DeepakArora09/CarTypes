@@ -29,7 +29,9 @@ final class ManufacturerInteractor: ManufacturerInteracting {
     for page: Int,
     completion: @escaping (Result<ResponseDomain, Error>) -> Void
   ) {
-    service.request(router: .getManufacturers(page: page, size: limit)) { [weak self] (response: ResponseApi, error: Error?)  in
+    service.request(
+      router: .getManufacturers(page: page, size: limit)
+    ) { [weak self] (response: ResponseApi, _: Error?)  in
       guard let manufacturer = self?.mapper.domain(from: response) else {
         return
       }

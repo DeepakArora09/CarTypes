@@ -33,7 +33,7 @@ final class ModelInteractor: ModelInteracting {
   ) {
     service.request(
       router: .getMainTypes(manufacturerId: id, page: page, size: limit)
-    ) { [weak self] (response: ResponseApi, error: Error?)  in
+    ) { [weak self] (response: ResponseApi, _: Error?)  in
       guard let model = self?.mapper.domain(from: response) else {
         return
       }

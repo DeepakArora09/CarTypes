@@ -66,6 +66,7 @@ final class ModelPresenter: ModelPresenting {
   }
 
   func onDidSelect(item: ViewModel) {
+    view?.showAlert(with: manufacturerName, message: item.name ?? "", buttonTitle: "OK")
   }
 }
 
@@ -96,14 +97,17 @@ private extension ModelPresenter {
   }
 }
 
-
 // MARK: Update View
 private extension ModelPresenter {
   func updateUI() {
     guard let model = model else {
       return
     }
-    let dataSource = dataSourceBuilder.buildDataSource(from: model.items)
+    let dataSource = dataSourceBuilder.buildDataSource(
+      from: model.items,
+      color: .orange
+    )
+
     DispatchQueue.main.async {
       self.view?.update(dataSource: dataSource)
     }
