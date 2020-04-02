@@ -1,5 +1,5 @@
 //
-//  ManufacturerMapper.swift
+//  Mapper.swift
 //  CarTypes
 //
 //  Created by Deepak Arora on 02.04.20.
