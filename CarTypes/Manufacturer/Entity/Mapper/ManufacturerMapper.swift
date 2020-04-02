@@ -15,6 +15,7 @@ protocol ManufacturerMapping {
 final class ManufacturerMapper: ManufacturerMapping {
   func manufacturer(from response: ManufactuerApi) -> Manufactuer {
     return Manufactuer(
+      currentPage: response.currentPage,
       totalPages: response.totalPages,
       items: manufacturerItem(from: response.items)
     )

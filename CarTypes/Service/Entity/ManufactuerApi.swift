@@ -9,10 +9,12 @@
 import Foundation
 
 struct ManufactuerApi: Codable {
+  let currentPage: Int
   let totalPages: Int
   let items: [String: String]
 
   enum CodingKeys: String, CodingKey {
+    case currentPage = "page"
     case totalPages = "totalPageCount"
     case items = "wkda"
   }

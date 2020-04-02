@@ -9,6 +9,7 @@
 import Foundation
 
 struct Manufactuer {
+  var currentPage: Int
   let totalPages: Int
-  let items: [ManufactuerItem]
+  var items: [ManufactuerItem]
 }
