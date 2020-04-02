@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ManufacturerRouting {
   func listingView() -> ManufacturerViewController
+  func showModels(for id: String, name: String, on hostViewController: UIViewController)
 }
 
 final class ManufacturerRouter: ManufacturerRouting {
@@ -23,6 +25,13 @@ final class ManufacturerRouter: ManufacturerRouting {
   }
 
   func listingView() -> ManufacturerViewController {
-    return manufacturerControllerProvider.manufacturerViewController(service: service)
+    return manufacturerControllerProvider.manufacturerViewController(
+      service: service,
+      router: self
+    )
+  }
+
+  func showModels(for id: String, name: String, on hostViewController: UIViewController) {
+    // Next PR!
   }
 }

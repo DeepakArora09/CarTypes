@@ -9,11 +9,17 @@
 import UIKit
 
 protocol ManufacturerControllerProviding {
-  func manufacturerViewController(service: NetworkServicing) -> ManufacturerViewController
+  func manufacturerViewController(
+    service: NetworkServicing,
+    router: ManufacturerRouting
+  ) -> ManufacturerViewController
 }
 
 final class ManufacturerControllerProvider: ManufacturerControllerProviding {
-  func manufacturerViewController(service: NetworkServicing) -> ManufacturerViewController {
+  func manufacturerViewController(
+    service: NetworkServicing,
+    router: ManufacturerRouting
+  ) -> ManufacturerViewController {
     guard let viewController = manufacturerStoryboard.instantiateViewController(
       withIdentifier: "ManufacturerViewController"
     ) as? ManufacturerViewController else {
@@ -24,7 +30,8 @@ final class ManufacturerControllerProvider: ManufacturerControllerProviding {
     let presenter = ManufacturerPresenter(
       view: viewController,
       interactor: interactor,
-      dataSourceBuilder: ManufacturerDataSourceBuilder()
+      dataSourceBuilder: ManufacturerDataSourceBuilder(),
+      router: router
     )
 
     viewController.presenter = presenter
