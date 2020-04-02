@@ -10,6 +10,13 @@
 		A45ACF642435D71800479CA1 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF632435D71800479CA1 /* Manufacturer.swift */; };
 		A45ACF662435D7BB00479CA1 /* ManufacturerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */; };
 		A45ACF692435D80D00479CA1 /* ManufacturerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */; };
+		A45ACF6C24363C9300479CA1 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF6B24363C9300479CA1 /* ReusableView.swift */; };
+		A45ACF6F24363CE400479CA1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF6E24363CE400479CA1 /* UIView.swift */; };
+		A45ACF7124363D4C00479CA1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7024363D4C00479CA1 /* UITableView.swift */; };
+		A45ACF7424363E3700479CA1 /* ManufacturerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */; };
+		A45ACF7724363F9400479CA1 /* ManufacturerDataSourceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */; };
+		A45ACF7B2436422100479CA1 /* ManufacturerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF792436422100479CA1 /* ManufacturerItemCell.swift */; };
+		A45ACF7C2436422100479CA1 /* ManufacturerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45ACF7A2436422100479CA1 /* ManufacturerItemCell.xib */; };
 		AA8B1A2424350D0200F001B1 /* ManufacturerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2324350D0200F001B1 /* ManufacturerRouter.swift */; };
 		AA8B1A2624350D8B00F001B1 /* ManufacturerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2524350D8B00F001B1 /* ManufacturerPresenter.swift */; };
 		AA8B1A2824350DB900F001B1 /* ManufacturerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B1A2724350DB900F001B1 /* ManufacturerInteractor.swift */; };
@@ -40,6 +47,13 @@
 		A45ACF632435D71800479CA1 /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
 		A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerItem.swift; sourceTree = "<group>"; };
 		A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerMapper.swift; sourceTree = "<group>"; };
+		A45ACF6B24363C9300479CA1 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		A45ACF6E24363CE400479CA1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A45ACF7024363D4C00479CA1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDataSource.swift; sourceTree = "<group>"; };
+		A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerDataSourceBuilder.swift; sourceTree = "<group>"; };
+		A45ACF792436422100479CA1 /* ManufacturerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerItemCell.swift; sourceTree = "<group>"; };
+		A45ACF7A2436422100479CA1 /* ManufacturerItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManufacturerItemCell.xib; sourceTree = "<group>"; };
 		AA8B1A2324350D0200F001B1 /* ManufacturerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerRouter.swift; sourceTree = "<group>"; };
 		AA8B1A2524350D8B00F001B1 /* ManufacturerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerPresenter.swift; sourceTree = "<group>"; };
 		AA8B1A2724350DB900F001B1 /* ManufacturerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerInteractor.swift; sourceTree = "<group>"; };
@@ -82,8 +96,44 @@
 			isa = PBXGroup;
 			children = (
 				A45ACF682435D80D00479CA1 /* ManufacturerMapper.swift */,
+				A45ACF7624363F9400479CA1 /* ManufacturerDataSourceBuilder.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		A45ACF6A24363C7D00479CA1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A45ACF6D24363CCF00479CA1 /* Extensions */,
+				A45ACF6B24363C9300479CA1 /* ReusableView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A45ACF6D24363CCF00479CA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A45ACF6E24363CE400479CA1 /* UIView.swift */,
+				A45ACF7024363D4C00479CA1 /* UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A45ACF7224363E1C00479CA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A45ACF7324363E3700479CA1 /* ManufacturerDataSource.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A45ACF78243641FC00479CA1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A45ACF792436422100479CA1 /* ManufacturerItemCell.swift */,
+				A45ACF7A2436422100479CA1 /* ManufacturerItemCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A4E412F0243543EC000A1BA1 /* Entity */ = {
@@ -117,6 +167,7 @@
 		AA8B1A1F24350CCF00F001B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A45ACF78243641FC00479CA1 /* Cell */,
 				AA8B1A2C24350E3300F001B1 /* ViewController */,
 				AA8B1A2924350E0200F001B1 /* Storyboard */,
 			);
@@ -134,6 +185,7 @@
 		AA8B1A2124350CD800F001B1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				A45ACF7224363E1C00479CA1 /* ViewModel */,
 				A45ACF672435D7F200479CA1 /* Mapper */,
 				A45ACF632435D71800479CA1 /* Manufacturer.swift */,
 				A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */,
@@ -187,6 +239,7 @@
 		AAA8B5CC24339150003CC4D4 /* CarTypes */ = {
 			isa = PBXGroup;
 			children = (
+				A45ACF6A24363C7D00479CA1 /* Common */,
 				AA8B1A1D24350CC000F001B1 /* Manufacturer */,
 				AAA8B5F324339E0F003CC4D4 /* Network */,
 				AAA8B5F024339826003CC4D4 /* Service */,
@@ -308,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA8B5DA24339152003CC4D4 /* LaunchScreen.storyboard in Resources */,
+				A45ACF7C2436422100479CA1 /* ManufacturerItemCell.xib in Resources */,
 				AAA8B5D724339152003CC4D4 /* Assets.xcassets in Resources */,
 				AA8B1A2B24350E1400F001B1 /* Manufacturer.storyboard in Resources */,
 			);
@@ -351,14 +405,20 @@
 				AAA8B5F92433A752003CC4D4 /* ManufactuerApi.swift in Sources */,
 				A45ACF662435D7BB00479CA1 /* ManufacturerItem.swift in Sources */,
 				AAA8B5F72433A187003CC4D4 /* NetworkService.swift in Sources */,
+				A45ACF7B2436422100479CA1 /* ManufacturerItemCell.swift in Sources */,
 				AAA8B5F524339E29003CC4D4 /* NetworkRouter.swift in Sources */,
 				A45ACF692435D80D00479CA1 /* ManufacturerMapper.swift in Sources */,
+				A45ACF6C24363C9300479CA1 /* ReusableView.swift in Sources */,
 				AA8B1A2624350D8B00F001B1 /* ManufacturerPresenter.swift in Sources */,
 				AA8B1A2824350DB900F001B1 /* ManufacturerInteractor.swift in Sources */,
 				AAA8B5CE24339150003CC4D4 /* AppDelegate.swift in Sources */,
 				AAA8B5F22433983D003CC4D4 /* CarTypesModule.swift in Sources */,
+				A45ACF6F24363CE400479CA1 /* UIView.swift in Sources */,
 				AA8B1A2E24350E5000F001B1 /* ManufacturerViewController.swift in Sources */,
+				A45ACF7424363E3700479CA1 /* ManufacturerDataSource.swift in Sources */,
 				AA8B1A3024350F0600F001B1 /* ManufacturerControllerProvider.swift in Sources */,
+				A45ACF7124363D4C00479CA1 /* UITableView.swift in Sources */,
+				A45ACF7724363F9400479CA1 /* ManufacturerDataSourceBuilder.swift in Sources */,
 				A45ACF642435D71800479CA1 /* Manufacturer.swift in Sources */,
 				AA8B1A2424350D0200F001B1 /* ManufacturerRouter.swift in Sources */,
 			);
