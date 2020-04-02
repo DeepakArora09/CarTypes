@@ -29,7 +29,7 @@ final class ModelRouter: ModelRouting {
       service: service,
       router: self
     )
-    hostViewController.present(viewController, animated: true, completion: nil)
+    hostViewController.navigationController?.pushViewController(viewController, animated: true)
   }
 }
 

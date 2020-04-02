@@ -47,6 +47,7 @@ final class ModelPresenter: ModelPresenting {
   }
 
   func onViewDidLoad() {
+    view?.setNavigation(title: "Models")
     fetchModel(for: model?.currentPage ?? 0, false)
   }
 

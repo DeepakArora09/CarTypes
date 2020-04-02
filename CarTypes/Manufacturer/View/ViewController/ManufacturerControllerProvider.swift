@@ -12,14 +12,14 @@ protocol ManufacturerControllerProviding {
   func manufacturerViewController(
     service: NetworkServicing,
     router: ManufacturerRouting
-  ) -> ManufacturerViewController
+  ) -> UIViewController
 }
 
 final class ManufacturerControllerProvider: ManufacturerControllerProviding {
   func manufacturerViewController(
     service: NetworkServicing,
     router: ManufacturerRouting
-  ) -> ManufacturerViewController {
+  ) -> UIViewController {
     guard let viewController = manufacturerStoryboard.instantiateViewController(
       withIdentifier: "ManufacturerViewController"
     ) as? ManufacturerViewController else {
@@ -35,7 +35,7 @@ final class ManufacturerControllerProvider: ManufacturerControllerProviding {
     )
 
     viewController.presenter = presenter
-    return viewController
+    return UINavigationController(rootViewController: viewController)
   }
 
   private var manufacturerStoryboard: UIStoryboard {
