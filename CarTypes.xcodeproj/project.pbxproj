@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4434B2624367F1600A52DDE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4434B2524367F1600A52DDE /* Nimble.framework */; };
+		A4434B2A24367F1A00A52DDE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4434B2924367F1A00A52DDE /* Quick.framework */; };
+		A4434B2D243680CE00A52DDE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4434B2924367F1A00A52DDE /* Quick.framework */; };
+		A4434B2E243680D000A52DDE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4434B2524367F1600A52DDE /* Nimble.framework */; };
 		A45ACF642435D71800479CA1 /* ResponseDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF632435D71800479CA1 /* ResponseDomain.swift */; };
 		A45ACF662435D7BB00479CA1 /* ManufacturerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */; };
 		A45ACF692435D80D00479CA1 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ACF682435D80D00479CA1 /* Mapper.swift */; };
@@ -50,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A4434B2524367F1600A52DDE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		A4434B2924367F1A00A52DDE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		A45ACF632435D71800479CA1 /* ResponseDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDomain.swift; sourceTree = "<group>"; };
 		A45ACF652435D7BB00479CA1 /* ManufacturerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerItem.swift; sourceTree = "<group>"; };
 		A45ACF682435D80D00479CA1 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4434B2A24367F1A00A52DDE /* Quick.framework in Frameworks */,
+				A4434B2624367F1600A52DDE /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +106,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4434B2D243680CE00A52DDE /* Quick.framework in Frameworks */,
+				A4434B2E243680D000A52DDE /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4434B2424367F1600A52DDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4434B2924367F1A00A52DDE /* Quick.framework */,
+				A4434B2524367F1600A52DDE /* Nimble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A45ACF672435D7F200479CA1 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +316,7 @@
 				AAA8B5CC24339150003CC4D4 /* CarTypes */,
 				AAA8B5E324339152003CC4D4 /* CarTypesTests */,
 				AAA8B5CB24339150003CC4D4 /* Products */,
+				A4434B2424367F1600A52DDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,6 +383,7 @@
 				AAA8B5C724339150003CC4D4 /* Frameworks */,
 				AAA8B5C824339150003CC4D4 /* Resources */,
 				AAA8B5EF24339447003CC4D4 /* Run Swiftlint */,
+				A4434B2C24367F4F00A52DDE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -452,6 +473,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A4434B2C24367F4F00A52DDE /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		AAA8B5EF24339447003CC4D4 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +696,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39D6X37PKJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarTypes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -676,6 +721,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39D6X37PKJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarTypes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,6 +745,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarTypesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,6 +770,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarTypesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

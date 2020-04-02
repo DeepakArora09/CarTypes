@@ -9,5 +9,4 @@
 import XCTest
 @testable import CarTypes
 
-class CarTypesTests: XCTestCase {
-}
+class CarTypesTests: XCTestCase {}
