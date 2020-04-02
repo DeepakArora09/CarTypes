@@ -9,14 +9,15 @@
 import Foundation
 
 protocol ManufacturerInteracting {
-  func fetchInitialManufacturers(completion: @escaping (Result<Manufactuer, Error>) -> Void)
-  func fetchNextPageManufacturers()
+  func fetchInitialManufacturers(
+    for page: Int,
+    completion: @escaping (Result<Manufactuer, Error>) -> Void
+  )
 }
 
 final class ManufacturerInteractor: ManufacturerInteracting {
   private let mapper: ManufacturerMapping
   private let service: NetworkServicing
-  private var offset = 0
   private let limit = 15
 
   init(service: NetworkServicing, mapper: ManufacturerMapping) {
@@ -24,8 +25,11 @@ final class ManufacturerInteractor: ManufacturerInteracting {
     self.mapper = mapper
   }
 
-  func fetchInitialManufacturers(completion: @escaping (Result<Manufactuer, Error>) -> Void) {
-    service.request(router: .getManufacturers(page: offset, size: limit)) { [weak self] (response: ManufactuerApi, error: Error?)  in
+  func fetchInitialManufacturers(
+    for page: Int,
+    completion: @escaping (Result<Manufactuer, Error>) -> Void
+  ) {
+    service.request(router: .getManufacturers(page: page, size: limit)) { [weak self] (response: ManufactuerApi, error: Error?)  in
       guard let manufacturer = self?.mapper.manufacturer(from: response) else {
         return
       }
