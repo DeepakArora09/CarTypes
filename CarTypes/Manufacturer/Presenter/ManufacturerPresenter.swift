@@ -22,6 +22,14 @@ final class ManufacturerPresenter: ManufacturerPresenting {
   }
 
   func onViewDidLoad() {
-    interactor.fetchInitialManufacturers()
+    interactor.fetchInitialManufacturers(completion: { result in
+      switch result {
+      case let .success(manufacturer):
+        print("from presenter")
+        print(manufacturer)
+      case .failure:
+        break
+      }
+    })
   }
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 protocol NetworkServicing {
-  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T) -> Void)
+  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T, _: Error?) -> Void)
 }
 
 final class NetworkService: NetworkServicing {
-  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T) -> Void) {
+  func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T, _: Error?) -> Void) {
     var components = URLComponents()
     components.scheme = router.scheme
     components.host = router.host
@@ -32,7 +32,7 @@ final class NetworkService: NetworkServicing {
       guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else {
         fatalError("Incorrect JSON from API response")
       }
-      completion(responseObject)
+      completion(responseObject, error)
     }
     dataTask.resume()
   }
