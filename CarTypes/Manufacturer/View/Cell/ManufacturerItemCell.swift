@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ManufacturerItemCell: ReusableTableCell {
+class ManufacturerItemCell: NibLoadableReusableTableCell {
+  @IBOutlet private weak var nameLabel: UILabel!
+
   override func awakeFromNib() {
     super.awakeFromNib()
+    nameLabel.textColor = .white
   }
 
   func update(with viewModel: Any) {
+    guard let viewModel = viewModel as? ManufacturerViewModel else {
+      return
+    }
+    nameLabel.text = viewModel.name
+    backgroundColor = viewModel.color
   }
 }

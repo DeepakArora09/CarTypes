@@ -15,13 +15,32 @@
                     <view key="view" contentMode="scaleToFill" id="hcD-Tb-rUE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-ZX-Rkc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WQn-VN-Xm3" id="DmO-Ns-gcY"/>
+                                    <outlet property="delegate" destination="WQn-VN-Xm3" id="UBo-iD-GPv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9PF-ZX-Rkc" firstAttribute="top" secondItem="h0G-Ze-hus" secondAttribute="top" id="TWm-Ab-k7O"/>
+                            <constraint firstAttribute="bottom" secondItem="9PF-ZX-Rkc" secondAttribute="bottom" id="UsR-2X-efF"/>
+                            <constraint firstItem="h0G-Ze-hus" firstAttribute="trailing" secondItem="9PF-ZX-Rkc" secondAttribute="trailing" id="fnd-OK-fU5"/>
+                            <constraint firstItem="9PF-ZX-Rkc" firstAttribute="leading" secondItem="h0G-Ze-hus" secondAttribute="leading" id="qt0-ia-b7p"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h0G-Ze-hus"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="9PF-ZX-Rkc" id="sd5-9P-YJD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhW-hc-sUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="179"/>
+            <point key="canvasLocation" x="-314.49275362318843" y="178.79464285714286"/>
         </scene>
     </scenes>
 </document>
