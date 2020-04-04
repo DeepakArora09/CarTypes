@@ -13,8 +13,8 @@ protocol NetworkServicing {
 }
 
 final class NetworkService: NetworkServicing {
+  var components = URLComponents()
   func request<T: Codable>(router: NetworkRouter, completion: @escaping (_: T, _: Error?) -> Void) {
-    var components = URLComponents()
     components.scheme = router.scheme
     components.host = router.host
     components.path = router.path
