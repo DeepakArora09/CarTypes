@@ -19,7 +19,7 @@ enum NetworkRouter {
   var scheme: String {
     switch self {
     case .getManufacturers, .getMainTypes:
-        return "https"
+      return "https"
     }
   }
 
@@ -27,16 +27,16 @@ enum NetworkRouter {
     let base = "api-aws-eu-qa-1.auto1-test.com"
     switch self {
     case .getManufacturers, .getMainTypes:
-        return base
+      return base
     }
   }
 
   var path: String {
     switch self {
     case .getManufacturers:
-        return "/v1/car-types/manufacturer"
+      return "/v1/car-types/manufacturer"
     case .getMainTypes:
-        return "/v1/car-types/main-types"
+      return "/v1/car-types/main-types"
     }
   }
 
@@ -54,7 +54,7 @@ enum NetworkRouter {
   var method: String {
     switch self {
     case .getManufacturers, .getMainTypes:
-        return "GET"
+      return "GET"
     }
   }
 

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ManufacturerRouting {
-  func listingView() -> UIViewController
+  var listingView: UIViewController { get }
   func showModels(for id: String, name: String, on hostViewController: UIViewController)
 }
 
@@ -30,7 +30,7 @@ final class ManufacturerRouter: ManufacturerRouting {
     self.modelRouter = modelRouter
   }
 
-  func listingView() -> UIViewController {
+  var listingView: UIViewController {
     return manufacturerControllerProvider.manufacturerViewController(
       service: service,
       router: self
