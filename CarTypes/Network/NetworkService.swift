@@ -27,12 +27,12 @@ final class NetworkService: NetworkServicing {
 
     let dataTask = session.dataTask(with: urlRequest) { data, response, error in
       guard error == nil, response != nil, let data = data else {
-        return
+        return // Error scenario not handled!
       }
       guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else {
         fatalError("Incorrect JSON from API response")
       }
-      completion(responseObject, error)
+      completion(responseObject, nil)
     }
     dataTask.resume()
   }

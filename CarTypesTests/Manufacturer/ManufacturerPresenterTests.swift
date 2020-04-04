@@ -25,7 +25,7 @@ final class ManufacturerViewMock: ManufacturerView {
 }
 
 final class ManufacturerRouterMock: ManufacturerRouting {
-  func listingView() -> UIViewController {
+  var listingView: UIViewController {
     return UIViewController()
   }
 

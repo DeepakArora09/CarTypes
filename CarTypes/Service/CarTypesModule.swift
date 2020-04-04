@@ -24,6 +24,6 @@ class CarTypesModule {
   }
 
   var initialViewController: UIViewController {
-    return manufacturerRouter.listingView()
+    return manufacturerRouter.listingView
   }
 }
