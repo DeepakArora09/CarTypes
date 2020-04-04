@@ -1,5 +1,5 @@
 //
-//DomainItem.swift
+// DomainItem.swift
 // CarTypes
 //
 // Created by Deepak Arora on 02.04.20.
