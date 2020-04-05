@@ -9,35 +9,34 @@
 import Foundation
 import UIKit
 
-protocol ManufacturerRouting {
-  var listingView: UIViewController { get }
-  func showModels(for id: String, name: String, on hostViewController: UIViewController)
+protocol ManufacturerRouting: AnyObject {
+  func showModels(for id: String, name: String)
 }
 
-final class ManufacturerRouter: ManufacturerRouting {
+final class ManufacturerRouter: NSObject {
+  private weak var viewController: ManufacturerViewController?
 
-  private let manufacturerControllerProvider: ManufacturerControllerProviding
-  private let service: NetworkServicing
-  private let modelRouter: ModelRouting
-
-  init(
-    manufacturerControllerProvider: ManufacturerControllerProviding,
-    service: NetworkServicing,
-    modelRouter: ModelRouting
-  ) {
-    self.manufacturerControllerProvider = manufacturerControllerProvider
-    self.service = service
-    self.modelRouter = modelRouter
-  }
-
-  var listingView: UIViewController {
-    return manufacturerControllerProvider.manufacturerViewController(
-      service: service,
-      router: self
+  static func createModule() -> UIViewController {
+    let view = ManufacturerControllerProvider().manufacturerViewController
+    let interactor = ManufacturerInteractor(service: NetworkService.shared, mapper: Mapper())
+    let router = ManufacturerRouter()
+    let presenter = ManufacturerPresenter(
+      view: view,
+      interactor: interactor,
+      dataSourceBuilder: DataSourceBuilder(),
+      router: router
     )
+    view.presenter = presenter
+    router.viewController = view
+    return view
   }
+}
 
-  func showModels(for id: String, name: String, on hostViewController: UIViewController) {
-    modelRouter.showModels(for: id, name: name, on: hostViewController)
+extension ManufacturerRouter: ManufacturerRouting {
+  func showModels(for id: String, name: String) {
+    viewController?.navigationController?.pushViewController(
+      ModelRouter.createModule(id: id, name: name),
+      animated: true
+    )
   }
 }

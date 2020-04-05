@@ -25,11 +25,7 @@ final class ManufacturerViewMock: ManufacturerView {
 }
 
 final class ManufacturerRouterMock: ManufacturerRouting {
-  var listingView: UIViewController {
-    return UIViewController()
-  }
-
-  func showModels(for id: String, name: String, on hostViewController: UIViewController) {
+  func showModels(for id: String, name: String) {
   }
 }
 
