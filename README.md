@@ -4,7 +4,8 @@
 
 # Welcome to Car Types
 This repo has 2 screens: 1 for manufacturers and 1 for models
-
+- iOS version > 11.0
+- Environment: Xcode 11.3
 
 ## Manufacturers
 Lists all the manufacturers
