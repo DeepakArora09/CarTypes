@@ -18,7 +18,7 @@ final class ModelRouter {
 
   static func createModule(id: String, name: String) -> UIViewController {
     let view = ModelControllerProvider().modelViewController
-    let interactor = ModelInteractor(service: NetworkService.shared, mapper: Mapper())
+    let interactor = ModelInteractor(service: NetworkService(), mapper: Mapper())
     let router = ModelRouter()
     let presenter = ModelPresenter(
       view: view,

@@ -18,7 +18,7 @@ final class ManufacturerRouter: NSObject {
 
   static func createModule() -> UIViewController {
     let view = ManufacturerControllerProvider().manufacturerViewController
-    let interactor = ManufacturerInteractor(service: NetworkService.shared, mapper: Mapper())
+    let interactor = ManufacturerInteractor(service: NetworkService(), mapper: Mapper())
     let router = ManufacturerRouter()
     let presenter = ManufacturerPresenter(
       view: view,
