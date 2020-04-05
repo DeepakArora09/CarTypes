@@ -9,36 +9,23 @@
 import UIKit
 
 protocol ManufacturerControllerProviding {
-  func manufacturerViewController(
-    service: NetworkServicing,
-    router: ManufacturerRouting
-  ) -> UIViewController
+  var manufacturerViewController: ManufacturerViewController { get }
 }
 
 final class ManufacturerControllerProvider: ManufacturerControllerProviding {
-  func manufacturerViewController(
-    service: NetworkServicing,
-    router: ManufacturerRouting
-  ) -> UIViewController {
+  var manufacturerViewController: ManufacturerViewController {
     guard let viewController = manufacturerStoryboard.instantiateViewController(
       withIdentifier: "ManufacturerViewController"
     ) as? ManufacturerViewController else {
       fatalError("ManufacturerViewController cannot init from storyboard")
     }
 
-    let interactor = ManufacturerInteractor(service: service, mapper: Mapper())
-    let presenter = ManufacturerPresenter(
-      view: viewController,
-      interactor: interactor,
-      dataSourceBuilder: DataSourceBuilder(),
-      router: router
-    )
-
-    viewController.presenter = presenter
-    return UINavigationController(rootViewController: viewController)
+    return viewController
   }
 
   private var manufacturerStoryboard: UIStoryboard {
-    return UIStoryboard(name: "Manufacturer", bundle: Bundle(for: ManufacturerViewController.self))
+    return UIStoryboard(
+      name: "Manufacturer", bundle: Bundle(for: ManufacturerViewController.self)
+    )
   }
 }

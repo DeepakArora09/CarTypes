@@ -9,38 +9,17 @@
 import UIKit
 
 protocol ModelControllerProviding {
-  func modelViewController(
-    for id: String,
-    name: String,
-    service: NetworkServicing,
-    router: ModelRouting
-  ) -> ModelViewController
+  var modelViewController: ModelViewController { get }
 }
 
 final class ModelControllerProvider: ModelControllerProviding {
-  func modelViewController(
-    for id: String,
-    name: String,
-    service: NetworkServicing,
-    router: ModelRouting
-  ) -> ModelViewController {
+  var modelViewController: ModelViewController {
     guard let viewController = modelStoryboard.instantiateViewController(
       withIdentifier: "ModelViewController"
     ) as? ModelViewController else {
       fatalError("ModelViewController cannot init from storyboard")
     }
 
-    let interactor = ModelInteractor(service: service, mapper: Mapper())
-    let presenter = ModelPresenter(
-      view: viewController,
-      interactor: interactor,
-      dataSourceBuilder: DataSourceBuilder(),
-      router: router,
-      manufacturerId: id,
-      manufacturerName: name
-    )
-
-    viewController.presenter = presenter
     return viewController
   }
 

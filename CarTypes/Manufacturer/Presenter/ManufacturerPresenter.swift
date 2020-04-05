@@ -60,10 +60,7 @@ final class ManufacturerPresenter: ManufacturerPresenting {
   }
 
   func onDidSelect(item: ViewModel) {
-    guard let controller = view as? UIViewController else {
-      return
-    }
-    router.showModels(for: item.id, name: item.name ?? "", on: controller)
+    router.showModels(for: item.id, name: item.name ?? "")
   }
 }
 

@@ -9,26 +9,36 @@
 import Foundation
 import UIKit
 
-protocol ModelRouting {
-  func showModels(for id: String, name: String, on hostViewController: UIViewController)
+protocol ModelRouting: AnyObject {
+  func showAlert(manufacturer: String, model: String, buttonTitle: String)
 }
 
-final class ModelRouter: ModelRouting {
-  private let modelControllerProvider: ModelControllerProviding
-  private let service: NetworkServicing
+final class ModelRouter {
+  private weak var viewController: ModelViewController?
 
-  init(modelControllerProvider: ModelControllerProviding, service: NetworkServicing) {
-    self.modelControllerProvider = modelControllerProvider
-    self.service = service
-  }
-
-  func showModels(for id: String, name: String, on hostViewController: UIViewController) {
-    let viewController = modelControllerProvider.modelViewController(
-      for: id,
-      name: name,
-      service: service,
-      router: self
+  static func createModule(id: String, name: String) -> UIViewController {
+    let view = ModelControllerProvider().modelViewController
+    let interactor = ModelInteractor(service: NetworkService(), mapper: Mapper())
+    let router = ModelRouter()
+    let presenter = ModelPresenter(
+      view: view,
+      interactor: interactor,
+      dataSourceBuilder: DataSourceBuilder(),
+      router: router,
+      manufacturerId: id,
+      manufacturerName: name
     )
-    hostViewController.navigationController?.pushViewController(viewController, animated: true)
+
+    view.presenter = presenter
+    router.viewController = view
+    return view
+  }
+}
+
+extension ModelRouter: ModelRouting {
+  func showAlert(manufacturer: String, model: String, buttonTitle: String) {
+    let alert = UIAlertController(title: manufacturer, message: model, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
+    viewController?.present(alert, animated: true)
   }
 }

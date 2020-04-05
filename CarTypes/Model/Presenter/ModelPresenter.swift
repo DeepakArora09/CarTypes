@@ -66,7 +66,7 @@ final class ModelPresenter: ModelPresenting {
   }
 
   func onDidSelect(item: ViewModel) {
-    view?.showAlert(with: manufacturerName, message: item.name ?? "", buttonTitle: "OK")
+    router.showAlert(manufacturer: manufacturerName, model: item.name ?? "", buttonTitle: "OK")
   }
 }
 
